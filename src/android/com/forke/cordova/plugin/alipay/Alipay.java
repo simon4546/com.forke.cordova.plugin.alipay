@@ -45,9 +45,9 @@ public class Alipay extends CordovaPlugin{
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 		super.initialize(cordova, webView);
-		partner = webView.getProperty("partner", "");
-		rsa_private = webView.getProperty("rsa_private", "");
-		rsa_public = webView.getProperty("rsa_public", "");
+		partner = webView.getPreferences().getString("partner", "");
+		rsa_private = webView.getPreferences().getString("rsa_private", "");
+		rsa_public = webView.getPreferences().getString("rsa_public", "");
 	}
 
 	private Handler mHandler = new Handler() {
