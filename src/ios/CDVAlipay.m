@@ -65,10 +65,10 @@
     
     NSString *subject = orderInfoArgs[@"subject"];
     NSString *body = orderInfoArgs[@"body"];
-    NSString *price = orderInfoArgs[@"price"];
-    NSString *tradeNo = orderInfoArgs[@"tradeNo"];
+    NSString *price = orderInfoArgs[@"total_fee"];
+    NSString *tradeNo = orderInfoArgs[@"out_trade_no"];
     NSString *timeout = orderInfoArgs[@"timeout"];
-    NSString *notifyUrl = orderInfoArgs[@"notifyUrl"];
+    NSString *notifyUrl = orderInfoArgs[@"notify_url"];
     NSString *seller = orderInfoArgs[@"seller"];
     
     /*

@@ -101,10 +101,10 @@ public class Alipay extends CordovaPlugin{
 			JSONObject orderInfoArgs =  args.getJSONObject(0);
 			String subject = orderInfoArgs.getString("subject");
 			String body = orderInfoArgs.getString("body");
-			String price = orderInfoArgs.getString("price");
-			String tradeNo = orderInfoArgs.getString("tradeNo");
+			String price = orderInfoArgs.getString("total_fee");
+			String tradeNo = orderInfoArgs.getString("out_trade_no");
 			String timeout = orderInfoArgs.getString("timeout");
-			String notifyUrl = orderInfoArgs.getString("notifyUrl");
+			String notifyUrl = orderInfoArgs.getString("notify_url");
 			String seller = orderInfoArgs.getString("seller");
 			
 			//"测试的商品", "该测试商品的详细描述", "0.01","30m","www.justep.com"
@@ -207,8 +207,7 @@ public class Alipay extends CordovaPlugin{
 		orderInfo += "&total_fee=" + "\"" + price + "\"";
 
 		// 服务器异步通知页面路径
-		orderInfo += "&notify_url=" + "\"" + "http://notify.msp.hk/notify.htm"
-				+ "\"";
+		orderInfo += "&notify_url=" + "\"" + notifyUrl+ "\"";
 
 		// 接口名称， 固定值
 		orderInfo += "&service=\"mobile.securitypay.pay\"";
